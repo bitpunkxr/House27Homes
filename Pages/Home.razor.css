@@ -1,0 +1,47 @@
+:root {
+    --brand: #e40101;
+    --primary: #fff;
+    --primary-2: #e6e6e6;
+    --secondary: #000000;
+    --tertiary: #272727;
+    --text: #000000a6;
+    --text-2: #ffffffa6;
+}
+
+.hero-section {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 90vh;
+    justify-content: center;
+    position: relative;
+}
+
+.title-section {
+    margin: auto;
+    margin-bottom: 20%;
+}
+
+.title-section em {
+    background: var(--brand);
+    color: var(--primary);
+    padding: var(--space);
+}
+
+.overlay {
+    position: absolute;
+    background: #ffffff59;
+    height: 100;
+}
+
+.btn-area {
+    width: 100%;
+    margin: var(--space);
+    padding: var(--space);
+}
+
+@media (min-width: 641px) {
+    .hero-section {
+        height: 80vh;
+    }
+}

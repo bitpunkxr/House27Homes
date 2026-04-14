@@ -1,22 +1,42 @@
-<div class="property-card">
-    <div class="image">
-        <button class="like"></button>
-    </div>
-    <div class="description">
-        <div class="property-name">
-            <h2>modern studio apartment in wuse 2</h2>
-        </div>
+@inject HttpClient Http
 
-        <div class="property-location">
-            <p>&blacktriangledown; abuja, federal capital ...</p>
+@foreach (var data in properties)
+    <div class="property-card">
+        <div class="image">
+            <button class="like"></button>
         </div>
-
-        <div class="property-rating">
-            <div class="price">
-                <p><strong>75k</strong>/night</p>
+        <div class="description">
+            <div class="property-name">
+                <h2>@properties.Name</h2>
             </div>
+
+            <div class="property-location">
+                <p>&blacktriangledown; @properties.Location</p>
+            </div>
+
+            <div class="property-rating">
+                <div class="price">
+                    <p><strong>@properties.Price k</strong>/night</p>
+                </div>
             
-            <div class="review">&starf; 5.0</div>
+                <div class="review">&starf; @properties.Review</div>
+            </div>
         </div>
     </div>
-</div>
+
+@code {
+    private PropertyCard[]? properties
+
+    protected override async Task OnInitializedAsync()
+    {
+        properties = await.HttpGetFromJsonAsync<PropertyCard[]>("sample-data/properties.json");
+    }
+
+    public class PropertyCard
+    {
+        public string? Name { get; set; }
+        public string? Location { get; set; }
+        public int Price { get; set; }
+        public int Review { get; set; }
+    }
+}

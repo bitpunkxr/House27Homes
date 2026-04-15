@@ -14,7 +14,7 @@
 .image {
     height: 150px;
     margin-bottom: .5rem;
-    background: #4b000080;
+    background: lightgray;
     position: relative;
 }
 

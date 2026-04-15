@@ -5,14 +5,26 @@
     height: 90vh;
     justify-content: center;
     position: relative;
+    background: url(assets/img/bg.JPG);
+    background-size: cover;
+    background-posiition: center;
+    background-repeat: no-repeat; color: var(--primary);
+    background-attachment: scroll;
 }
 
 .title-section {
     margin: auto;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
     text-align: center;
     text-shadow: var(--l-shad);
+    background: rgba(0, 0, 0, 0.5);
+    width: fit-content;
+    border-radius: var(--space);
+    box-shadow: var(--b-shad);
 }
+
+.title-section h1 { color: var(--primary); }
 
 .title-section em {
     background: var(--brand);
@@ -31,14 +43,16 @@
 
 .btn-area {
     width: 100%;
-    margin: var(--space) auto;
-    padding: var(--space);
 }
 
 @media (min-width: 641px) {
     .hero-section {
-        height: 80vh;
+        height: 100vh;
     }
+}
+
+.bg {
+    background: var(--secondary-2);
 }
 
 .flex-container {
@@ -49,5 +63,29 @@
     list-style: none;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    background: var(--secondary-2);
+}
+
+.image-grid {
+    margin: 3rem auto;
+    width: 95%;
+    text-align: left;
+    background: white;
+    border-radius: var(--space);
+    box-shadow: var(--s-shad);
+    overflow: hidden;
+}
+
+.grid-title {
+    width: inherit; 
+    margin: 1rem auto;
+}
+
+.grid-title h2 {
+    color: var(--text);
+}
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

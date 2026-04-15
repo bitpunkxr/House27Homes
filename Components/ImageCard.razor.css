@@ -1,0 +1,26 @@
+.image {
+    position: relative;
+    border-radius: var(--space);
+    overflow: hidden;
+    margin: 1rem auto;
+    height: 40vh;
+    width: 45%; background: lightgray;
+}
+
+.description {
+    position: absolute;
+    background: linear-gradient(transparent, var(--secondary));
+    height: 60%;
+    margin: auto;
+    bottom: 0; 
+    width: 100%;
+    height: fit-content;
+}
+
+h2, p {
+    margin-bottom: 1rem;
+    color: var(--secondary-2);
+    text-transform: capitalize;
+}
+
+p { font-size: 14px; }

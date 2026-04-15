@@ -12,6 +12,7 @@
     --space-2: .8rem;
     --b-shad: 5px 5px 7px #000000d8;
     --l-shad: 5px 5px 7px #00000023;
+    --s-shad: 0 0 7px #00000023;
 }
 
 html, body {

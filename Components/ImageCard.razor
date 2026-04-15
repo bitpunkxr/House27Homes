@@ -1,0 +1,48 @@
+@inject HttpClient Http
+
+@if (needs == null)
+{
+    <div class="image">
+        <div class="description"></div>
+    </div>
+    <div class="image">
+        <div class="description"></div>
+    </div>
+    <div class="image">
+        <div class="description"></div>
+    </div>
+    <div class="image">
+        <div class="description"></div>
+    </div>
+}
+else
+{
+    @foreach (var cards in needs)
+    {
+        <div class="image">
+            <div class="description">
+                <p>@cards.Category</p> 
+                <h2>@cards.Name</h2>
+                <p>@cards.Description</p>
+            </div>
+        </div>
+    }
+}
+
+@code {
+    private Images[]? needs;
+
+    protected override async Task OnInitializedAsync()
+    {
+        needs = await Http.GetFromJsonAsync<Images[]>("sample-data/needs.json");
+    }
+
+    public class Images
+    {
+        public string? Category { get; set; }
+
+        public string? Name { get; set; }
+
+        public string? Description { get; set; }
+    }
+}

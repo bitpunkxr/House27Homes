@@ -1,39 +1,66 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">House 27</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+﻿<div class="navigation-bar">
+    <div class="navigation-brand">
+        <a href="">House 27 Homes</a>
+        <div class="navigation-menu @Active" @onclick="ToggleNavMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
-</div>
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="nav flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
+    <div class="navigation-pages @NavMenuCssClass" @onclick="ToggleNavMenu">
+        <div class="navigation-link">
+            <div class="navigation-item">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    Home
+                </NavLink>
+            </div>
+            <div class="navigation-item">
+                <NavLink href="counter">
+                    Properties
+                </NavLink>
+            </div>
+            <div class="navigation-item">
+                <NavLink href="weather">
+                    About
+                </NavLink>
+            </div>
+            <div class="navigation-item">
+                <NavLink href="counter">
+                    Blog
+                </NavLink>
+            </div>
+            <div class="navigation-item">
+                <NavLink href="weather">
+                    Contact
+                </NavLink>
+            </div>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Projects
-            </NavLink>
+        
+        <div class="stand-alone">
+            <div class="navigation-item">
+                <NavLink href="counter">
+                    Contact
+                </NavLink>
+            </div>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Properties
-            </NavLink>
-        </div>
-    </nav>
+    </div>
 </div>
 
 @code {
     private bool collapseNavMenu = true;
 
+    private bool folded = false;
+
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private string? Active => folded ? "active" : "";
 
     private void ToggleNavMenu()
     {
+        folded = !folded;
+
         collapseNavMenu = !collapseNavMenu;
     }
 }

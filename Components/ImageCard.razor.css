@@ -3,15 +3,22 @@
     border-radius: var(--space);
     overflow: hidden;
     margin: 1rem auto;
-    height: 40vh;
-    width: 45%; background: lightgray;
+    height: 200px;
+    width: 200px; background: lightgray;
     box-shadow: var(--s-shad);
+}
+
+@media (min-width: 841px) {
+    .image {
+	height: 250px;
+	width: 250px;
+    }
 }
 
 .description {
     position: absolute;
     background: linear-gradient(transparent, var(--secondary));
-    height: 60%;
+    height: fit-content;
     margin: auto;
     bottom: 0; 
     width: 100%;
@@ -19,9 +26,9 @@
 }
 
 h2, p {
-    margin-bottom: 1rem;
+    margin-bottom: .3rem;
     color: var(--secondary-2);
     text-transform: capitalize;
 }
 
-p { font-size: 1rem; }
+p { font-size: .8rem; }

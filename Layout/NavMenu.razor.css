@@ -8,15 +8,16 @@ a {
 .navigation-bar {
     display: flex;
     flex-direction: row;
-    backdrop-filter: brightness(90%) blur(100px);
     width: 100%;
     padding: .5rem 0;
     justify-content: space-between;
     box-shadow: var(--s-shad);
+    backdrop-filter: blur(100px) saturate(500%);
+    background: rgba(255, 255, 255, 0.3);
+    position: relative;
 }
 
 .navigation-brand {
-    backdrop-filter: blur(100px);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,6 +37,7 @@ a {
         width: 100%;
         height: 2px;
         position: absolute;
+	transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.75);
     }
 
     .navigation-menu span:first-of-type {
@@ -66,12 +68,13 @@ a {
 .navigation-page {
     position: absolute;
     width: 100%;
-    box-shadow: 0 0 20px red;
     display: flex;
     flex-direction: column;
     padding: 3rem 0;
-    transition: all .7s ease;
-    backdrop-filter: blur(100px);
+    margin-top: 2.3rem;
+    box-shadow: var(--l-shad);
+    transition: all 0.7s ease;
+    background: rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
     letter-spacing: 4px;
     text-align: center;
@@ -109,12 +112,12 @@ a {
 @media (min-width: 831px) {
     .navigation-bar {
         backdrop-filter: none;
-	flex-direction: row;
-	box-shadow: none;
+	    flex-direction: row;
+	    box-shadow: none;
     }
 
     .navigation-brand {
-        backdrop-filter: blur(100px);
+        backdrop-filter: blur(300px);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -122,6 +125,8 @@ a {
         margin-left: 10px;
         border-radius: 2rem;
         box-shadow: var(--l-shad);
+	backdrop-filter: blur(100px);
+	background: rgba(255, 255, 255, 0.3);
     }
 
     .navigation-menu {
@@ -130,28 +135,28 @@ a {
 
     .navigation-page {
         margin: auto;
-	width: fit-content;
-	display: flex;
-	flex-direction: row;
-	gap: 1rem;
-	padding: .5rem;
-	border-radius: 2rem;
-	background: var(--secondary);
+	    width: fit-content;
+	    display: flex;
+	    flex-direction: row;
+	    gap: 1rem;
+	    padding: .5rem;
+	    border-radius: 2rem;
+	    background: var(--secondary);
         box-shadow: var(--b-shad);
-	left: 50%;
-	transform: translateX(-50%);
+	    left: 50%;
+	    transform: translateX(-50%);
     }
 
     .nav-item {
-	font-size: .9rem;
-	text-transform: none;
-	letter-spacing: 0;
+	    font-size: .9rem;
+	    text-transform: none;
+	    letter-spacing: 0;
     }
 
     .nav-item ::deep a, .stand-alone ::deep a {
         color: var(--secondary-2);
-	border-radius: 2rem;
-	padding: .2rem 1rem;
+	    border-radius: 2rem;
+	    padding: .2rem 1rem;
     }
 
     .nav-item ::deep a.active, .stand-alone ::deep a.active {

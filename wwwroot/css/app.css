@@ -13,6 +13,7 @@
     --b-shad: 5px 5px 7px #000000d8;
     --l-shad: 5px 5px 7px #00000023;
     --s-shad: 0 0 7px #00000023;
+    --trans: cubic-bezier(0.68, -0.55, 0.265, 1.75);
 }
 
 html, body {
@@ -28,6 +29,7 @@ h1, h2, h3, h4, h5, h6, p, div, img, section {
     margin: 0;
     padding: 0;
     font-weight: 300;
+    transition: .5s ease;
 }
 
 h1, h2 {

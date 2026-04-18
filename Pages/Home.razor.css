@@ -85,3 +85,5 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+.gray-background { background: var(--secondary-2); box-shadow: var(--s-shad); }

@@ -35,10 +35,10 @@
 
 @code {
     private bool _isOpen;
-    private DetailedProperties? _activeProperty;
+    private Properties? _activeProperty;
 
     [Parameter, EditorRequired]
-    public DetailedProperties? Property { get; set; }
+    public Properties? Property { get; set; }
     
     protected override void OnParametersSet()
     {

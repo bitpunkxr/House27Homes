@@ -26,7 +26,7 @@
         }
         else
         {
-            <PropertyDetail DetailedProperties="_selectedTrail" OnSelected="HandlePropertySelected" />
+            <PropertyDetail Property="_selectedTrail" OnSelected="HandlePropertySelected" />
             @foreach (var property in _properties)
             {
                 <PropertyCard Property="property" />
@@ -74,7 +74,7 @@
 @code {
     private IEnumerable<Properties>? _properties;
     private Property? _selectedProperty;
-    private void HandlePropertySelected(Property property)
+    private void HandlePropertySelected(Properties property)
     {
         _selectedProperty = property;
     }

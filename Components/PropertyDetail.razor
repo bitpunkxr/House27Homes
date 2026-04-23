@@ -1,7 +1,7 @@
 <div class="drawer-wrapper @(_isOpen ? "slide" : "")">
     <div class="drawer-mask"></div>
     <div class="drawer">
-        @if (_activeProperty is not null)
+        @if (_activeProperty != null)
         {
             <div class="property-card">
                 <div class="image">
@@ -27,6 +27,8 @@
                     <div class="property-location">
                         <p>@_activeProperty.Description</p>
                     </div>
+
+                    <button @onclick="Close">Close</button>
                 </div>
             </div>
         }

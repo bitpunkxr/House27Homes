@@ -73,6 +73,7 @@
 
 @code {
     private IEnumerable<Properties>? _properties;
+
     private Properties? _selectedProperty;
     private void HandlePropertySelected(Properties property)
     {
@@ -85,10 +86,31 @@
 
     protected override async Task OnInitializedAsync()
     {
-        _properties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
+        try
+        {
+            _properties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading property data:{ex.Message}");
+        }
 
-        _needs = await Http.GetFromJsonAsync<IEnumerable<DisplayCard>>("sample-data/needs.json");
+        try
+        {
+            _needs = await Http.GetFromJsonAsync<IEnumerable<DisplayCard>>("sample-data/needs.json");
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading assets:{ex.Message}");
+        }
 
-        _items = await Http.GetFromJsonAsync<IEnumerable<NewArrivals>>("sample-data/items.json");
+        try
+        {
+            _items = await Http.GetFromJsonAsync<IEnumerable<NewArrivals>>("sample-data/items.json");
+        }
+        catch (HttpRequestException ex)
+        {
+            Console.WriteLine($"There was a problem loading items:{ex.Message}");
+        }
     }
 }

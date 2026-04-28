@@ -26,7 +26,6 @@
         }
         else
         {
-            <PropertyDetail Details="_selectedProperty" OnSelected="HandlePropertySelected" />
             @foreach (var property in _properties)
             {
                 <PropertyCard Property="property" />
@@ -74,12 +73,6 @@
 @code {
     private IEnumerable<Properties>? _properties;
 
-    private Properties? _selectedProperty;
-    private void HandlePropertySelected(Properties property)
-    {
-        _selectedProperty = property;
-    }
-
     private IEnumerable<DisplayCard>? _needs;
 
     private IEnumerable<NewArrivals>? _items;
@@ -92,7 +85,7 @@
         }
         catch (HttpRequestException ex)
         {
-            Console.WriteLine($"There was a problem loading properties data:{ex.Message}");45
+            Console.WriteLine($"There was a problem loading properties data:{ex.Message}");
         }
 
         try

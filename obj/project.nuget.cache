@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "o/Dh7p8oiTE=",
+  "dgSpecHash": "w1ciVNLZiKk=",
   "success": true,
-  "projectFilePath": "c:\\Users\\V\\house27homes\\house27homes.csproj",
+  "projectFilePath": "C:\\Users\\V\\house27homes\\house27homes.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\V\\.nuget\\packages\\microsoft.aspnetcore.app.internal.assets\\10.0.3\\microsoft.aspnetcore.app.internal.assets.10.0.3.nupkg.sha512",
     "C:\\Users\\V\\.nuget\\packages\\microsoft.aspnetcore.authorization\\10.0.3\\microsoft.aspnetcore.authorization.10.0.3.nupkg.sha512",

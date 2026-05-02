@@ -4,23 +4,22 @@
             <div class="item-image"></div>
             <div class="item-description">
                 <div class="item-name">
-                    <h2>@_activeItem.Name</h2>
+                    <h2><strong>@_activeItem.Name</strong></h2>
                 </div>
                 <div class="item-rating">
                     <div class="price">
-                        <p><strong>@_activeItem.Price k</strong></p>
+                        <p>@_activeItem.Price k</p>
                     </div>
 
                     <div class="review">&starf; @_activeItem.Rating</div>
+                </div>
 
                     <div class="item-rating">
                         <div class="price">
-                            <p><strong>@_activeItem.Info</strong></p>
+                            <p>@_activeItem.Info</p>
                         </div>
                     </div>
-
-                    <button @onclick="CloseItem">Close</button>
-                </div>
+                <button class="wide-button" @onclick="CloseItem">Close</button>
             </div>
         </div>
     </div>
@@ -46,7 +45,7 @@
 
     private void CloseItem()
     {
-        _activeItem = null;
+        NewArrivals = null;
 
         _open = false;
     }

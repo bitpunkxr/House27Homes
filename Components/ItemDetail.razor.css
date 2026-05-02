@@ -37,11 +37,11 @@
     margin: var(--space-2) auto;
     background: var(--secondary-2);
     box-shadow: var(--l-shad);
+    overflow-y: auto;
 }
     @media (min-width: 841px) {
         .item-card {
-            width: 32%;
-            height: fit-content;
+            height: 80%;
         }
     }
 

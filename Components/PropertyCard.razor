@@ -20,7 +20,9 @@
         </div>
 
         <div class="property-rating">
-            <button class="wide-button" @onclick="@(async () => await OnSelected.InvokeAsync(Property))">View</button>
+            <button @onclick="@(async () => await OnSelected.InvokeAsync(Property))">
+                View
+            </button>
         </div>
     </div>
 </div>
@@ -28,6 +30,7 @@
 @code {
     [Parameter, EditorRequired]
     public Properties Property { get; set; } = default!;
+
     [Parameter]
     public EventCallback<Properties> OnSelected { get; set; }
 }

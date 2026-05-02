@@ -6,33 +6,29 @@
                 <div class="property-name">
                     <h2>@_activeProperty.Name</h2>
                 </div>
-                
+
                 <div class="property-location">
                     <p>@_activeProperty.Location</p>
                 </div>
 
                 <div class="property-location">
                     <p>@_activeProperty.Description</p>
-                </div>
-
-                <div class="property-location">
-                    <p>
-                        Number Of Rooms: <strong>@_activeProperty.Rooms</strong>
-                    </p>
+                    <hr>
+                    <p>Number Of Rooms: @_activeProperty.Rooms</p>
                 </div>
 
                 <div class="property-rating">
                     <div class="digits">
-                        <p><strong>@_activeProperty.Price k</strong>/night</p>
+                        <p>@_activeProperty.Price</p>
                     </div>
 
                     <div class="digits">
-                        <div class="digits">&starf; @_activeProperty.Review</div>
+                        <p>@_activeProperty.Review &starf;</p>
                     </div>
                 </div>
 
                 <div class="property-rating">
-                    <button class="wide-button" @onclick="Close">Close</button>
+                    <button @onclick="Close">Close</button>
                 </div>
             </div>
         </div>
@@ -52,6 +48,7 @@
         if (Properties != null)
         {
             _activeProperty = Properties;
+
             _open = true;
         }
     }
@@ -59,6 +56,7 @@
     private void Close()
     {
         Properties = null;
+
         _open = false;
     }
 }

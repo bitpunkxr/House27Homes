@@ -12,9 +12,9 @@
         else
         {
             <PropertyDetail Properties="_selectedProperty" />
-            @foreach (var property in _properties)
+            @foreach (var items in _properties)
             {
-                <PropertyCard Property="property" OnSelected="HandleSelectedProperty" />
+                <PropertyCard Property="items" OnSelected="HandleClick" />
             }
         }
     </section>
@@ -59,7 +59,7 @@
 @code {
     private IEnumerable<Properties>? _properties;
         private Properties? _selectedProperty;
-        private void HandleSelectedProperty(Properties property)
+        private void HandleClick(Properties property)
         {
             _selectedProperty = property;
         }

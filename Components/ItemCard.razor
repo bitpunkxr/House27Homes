@@ -12,7 +12,7 @@
             <div class="review">&starf; @Items.Rating</div>
         </div>
         
-	    <button class="wide-button" @onclick="@(async () => await OnSelectedItem.InvokeAsync(Items))">
+	    <button class="wide-button">
             Place an order
         </button>
     </div>
@@ -21,7 +21,4 @@
 @code {
     [Parameter, EditorRequired]
     public NewArrivals Items { get; set; } = default!;
-
-    [Parameter]
-    public EventCallback<NewArrivals> OnSelectedItem { get; set; }
 }

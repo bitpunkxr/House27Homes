@@ -61,10 +61,9 @@
     }
     else
     {
-        <ItemDetail NewArrivals="_selectedItem" />
         @foreach (var items in _items)
         {
-            <ItemCard Items="items" OnSelectedItem="HandleItemSelected" />
+            <ItemCard Items="items" />
         }
     }
 </div>
@@ -81,8 +80,6 @@
     private IEnumerable<DisplayCard>? _needs;
 
     private IEnumerable<NewArrivals>? _items;
-        private NewArrivals? _selectedItem;
-        private void HandleItemSelected(NewArrivals item) => _selectedItem = item;
 
     protected override async Task OnInitializedAsync()
     {

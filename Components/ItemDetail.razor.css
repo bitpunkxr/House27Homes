@@ -1,6 +1,6 @@
 .drawer-mask {
     background: transparent;
-    backdrop-filter: blur(2px) brightness(40%);
+    backdrop-filter: blur(20px) brightness(40%);
     position: fixed;
     z-index: 99;
     top: 0;
@@ -9,6 +9,8 @@
     bottom: 0;
     opacity: 0;
     visibility: hidden;
+    transition: .3s ease;
+    overflow-y: auto;
 }
 
 .drawer-mask.open {
@@ -25,7 +27,6 @@
     transition: .3s ease;
     width: 100%;
     max-width: 500px;
-    overflow-y: auto;
 }
 
 .item-card {
@@ -37,7 +38,6 @@
     margin: var(--space-2) auto;
     background: var(--secondary-2);
     box-shadow: var(--l-shad);
-    overflow-y: auto;
 }
     @media (min-width: 841px) {
         .item-card {

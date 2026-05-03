@@ -203,3 +203,7 @@ code {
             height: fit-content;
         }
     }
+
+.bg-lg {
+    background: rgb(92, 92, 92);
+}

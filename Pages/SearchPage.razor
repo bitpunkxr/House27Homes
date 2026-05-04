@@ -39,12 +39,14 @@ else
     {
         try
         {
-            var allProperties = await Http.GetFromJsonAsAsync<IEnumerable<Properties>>(requestURI: "sample-data/properties.json");
+            var allProperties = await Http.GetFromJsonAsync<IEnumerable<Properties>>("sample-data/properties.json");
             
-            _searchResults = allTrails!.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+            _searchResults = allProperties!.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
         }
         catch (HttpRequestException ex)
-        Console.WriteLine(value: $"There was a problem loading property data: {ex.Message}");
+        {
+            Console.WriteLine(value: $"There was a problem loading property data: {ex.Message}");
+        }
     }
 
     private void HandlePropertySelected(Properties property) => _selectedProperty = property;

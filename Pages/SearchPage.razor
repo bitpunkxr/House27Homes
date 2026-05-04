@@ -1,11 +1,51 @@
 @page "/search/{SearchTerm}"
+@inject HttpClient Http
+@inject NavigationManager NavManager
 
 <PageTitle>Search - House 27</PageTitle>
 
-<br>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Search</li>
+    </ol>
+</nav>
+
 <h2>Search Results for "@SearchTerm"</h2>
 
+@if (_searchResults == null)
+{
+    <p>Loading Search Results...</p>
+}
+else
+{
+    <PropertyDetail Properties="_selectedProperty" />
+    <div class="grid">
+        @foreach (var items in _searchResults)
+        {
+            <PropertyCard Property="items" OnSelectedProperty="HandlePropertySelected" />
+        }
+    </div>
+}
+
 @code {
-    [Parameter]
-    public string SearchTerm { get; set; } = default!;
+    private IEnumerable<Properties>? _searchResults;
+        private Properties? _selectedProperty;
+    [Parameter] public string SearchTerm { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var allProperties = await Http.GetFromJsonAsAsync<IEnumerable<Properties>>(requestURI: "sample-data/properties.json");
+            
+            _searchResults = allTrails!.Where(x => x.Name.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase) || x.Location.Contains(SearchTerm, StringComparison.CurrentCultureIgnoreCase));
+        }
+        catch (HttpRequestException ex)
+        Console.WriteLine(value: $"There was a problem loading property data: {ex.Message}");
+    }
+
+    private void HandlePropertySelected(Properties property) => _selectedProperty = property;
 }

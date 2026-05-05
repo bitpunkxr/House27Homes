@@ -76,7 +76,7 @@
 
             if (MaxRoom is not null && MaxRoom > 0)
             {
-                filters.Add(x => x.Room <= MaxRoom);
+                filters.Add(x => x.Rooms <= MaxRoom);
             }
 
             if (filters.Any())

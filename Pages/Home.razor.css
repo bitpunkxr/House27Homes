@@ -35,7 +35,7 @@
 
     .title-section p { 
         position: absolute; 
-        width: 30%; 
+        width: 40%; 
         background: var(--secondary); 
         box-shadow: var(--b-shad); 
         color: var(--text-2); 

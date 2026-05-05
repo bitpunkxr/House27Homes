@@ -4,19 +4,17 @@
 
 <PageTitle>Search - House 27</PageTitle>
 
-<section class="bg">
-    <section class="flex-container">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item">
-                    <a href="/">Home</a>
-                </li>
-                <li class="breadcrumb-item active" aria-current="page">Search</li>
-            </ol>
-        </nav>
-    </section>
+<section class="bg pt-5 mt-5">
+    <nav aria-label="breadcrumb" class="m-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Search</li>
+        </ol>
+    </nav>
 
-    <h2>Search Results for "@SearchTerm"</h2>
+    <h2 class="m-4">Search Results for "@SearchTerm"</h2>
 
     <section class="flex-container">
         @if (_searchResults == null)

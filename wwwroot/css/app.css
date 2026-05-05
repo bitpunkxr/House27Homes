@@ -54,17 +54,25 @@ button {
     color: var(--primary-2);
     padding: var(--space-2);
     border-radius: var(--space);
-    box-shadow: var(--b-shad);
+    box-shadow: var(--l-shad);
+    transition: .3s ease;
 }
 
 button:hover {
-    transform: translateY(-10px);
+    transform: scale(1.1);
     box-shadow: var(--b-shad2);
+    background: var(--primary-2);
+    color: var(--secondary);
+    box-shadow: inset var(--l-shad), var(--l-shad);
 }
 
 .wide-button {
     width: 100%;
     margin: 2rem auto 0 auto;
+}
+
+.wide-button:hover {
+    transform: scale(1.05);
 }
 
 #blazor-error-ui {

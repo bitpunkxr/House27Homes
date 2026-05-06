@@ -48,21 +48,20 @@
 }
 
 .image {
-    height: 150px;
+    min-height: 150px;
     margin-bottom: .5rem;
     background: lightgray;
     position: relative;
 }
 
-.like {
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-    background: var(--text);
-    box-shadow: var(--l-shadow);
-    position: absolute;
-    top: 20px;
-    left: 20px;
+.image > img {
+    width: 100%;
+}
+
+@media (min-width: 800px) {
+    .image {
+	    min-height: 200px;
+    }
 }
 
 .property-name, .property-location, .property-rating { margin: 1rem auto; width: 90%; }

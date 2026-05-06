@@ -1,7 +1,9 @@
 <div class="drawer-mask @(_open ? "open" : "")">
     <div class="drawer">
         <div class="property-card">
-            <div class="image"></div>
+            <div class="image">
+                <img src="@_activeProperty.Image" alt="">
+            </div>
             <div class="description">
                 <div class="property-name">
                     <h2>@_activeProperty.Name</h2>

@@ -1,7 +1,11 @@
 @inject NavigationManager NavManager
 
 <p class="mt-4">
-    <input @onkeydown="SearchForProperty" @bind="_searchTerm" @bind:event="oninput" type="text" placeholder="Search for a property" class="form-control" />
+    <input @onkeydown="SearchForProperty" 
+            @bind="_searchTerm" 
+            @bind:event="oninput" 
+            type="text" 
+            placeholder="Search for a property" class="form-control" />
 </p>
 
 @code {

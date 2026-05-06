@@ -163,7 +163,7 @@ code {
     gap: .5rem;
     padding: 2rem 16px;
     list-style: none;
-    overflow-x: scroll;
+    overflow-x: auto;
     scroll-snap-type: x mandatory;
 }
 
